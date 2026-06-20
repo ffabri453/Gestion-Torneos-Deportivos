@@ -1,10 +1,11 @@
 import express, { Request, Response } from 'express';
-
 import pool from './src/config/db';
+import tournamentRoutes from './src/routes/tournamentRoutes';
 
 const app = express();
 
 app.use(express.json());
+app.use(tournamentRoutes);
 
 const PORT = process.env.PORT || 3000;
 
