@@ -10,7 +10,7 @@ http:
     type: json
     data: |-
       {
-              "tournament_id": 1,
+              "tournament_id": 2,
               "name": "Los Tigres FC",
               "captain": "Juan Perez",
               "city": "Rosario",
