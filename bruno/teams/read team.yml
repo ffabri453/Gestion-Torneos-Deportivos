@@ -1,10 +1,10 @@
 info:
-  name: delete team
+  name: read team
   type: http
 
 http:
-  method: DELETE
-  url: http://localhost:3000/api/teams/1
+  method: GET
+  url: http://localhost:3000/api/teams/:id
   auth: inherit
 
 settings:
@@ -12,3 +12,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+​
