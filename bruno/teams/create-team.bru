@@ -1,0 +1,22 @@
+meta {
+  name: Create Team
+  type: http
+}
+
+post {
+  url: http://localhost:3000/api/teams
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "tournament_id": 1,
+    "name": "Los Halcones",
+    "captain": "Juan Perez",
+    "city": "Rosario",
+    "players_count": 11
+  }
+}
