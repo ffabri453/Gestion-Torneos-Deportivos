@@ -16,14 +16,14 @@ CREATE TABLE IF NOT EXISTS tournaments (
 
     format VARCHAR(50) NOT NULL,                   -- Formato del torneo: league, knockout o group_stage.
 
-    modality VARCHAR(20) NOT NULL DEFAULT 'football_11',
-                                                      -- Modalidad de fútbol: football_5, football_7, football_8 o football_11.
+    modality VARCHAR(30) NOT NULL DEFAULT 'futbol_11',
+                                                      -- Modalidad de fútbol: futbol_5, futbol_7, futbol_8 o futbol_11.
 
     max_teams INTEGER NOT NULL,                    -- Cantidad máxima de equipos permitidos en el torneo.
 
     status VARCHAR(20) NOT NULL DEFAULT 'open',    -- Estado del torneo: open, in_progress o finished.
 
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                                       -- Fecha y hora en que se creó el torneo.
 
     CONSTRAINT chk_tournament_format
@@ -31,12 +31,12 @@ CREATE TABLE IF NOT EXISTS tournaments (
                                                       -- Evita que se cargue un formato inválido.
 
     CONSTRAINT chk_tournament_modality
-        CHECK (modality IN ('football_5', 'football_7', 'football_8', 'football_11')),
+        CHECK (modality IN ('futbol_5', 'futbol_7', 'futbol_8', 'futbol_11')),
                                                       -- Evita que se cargue una modalidad de fútbol inválida.
 
     CONSTRAINT chk_tournament_max_teams
-        CHECK (max_teams >= 2),
-                                                      -- Un torneo necesita al menos 2 equipos.
+        CHECK (max_teams > 0),
+                                                      -- Evita torneos con cantidad máxima de equipos inválida.
 
     CONSTRAINT chk_tournament_status
         CHECK (status IN ('open', 'in_progress', 'finished'))
