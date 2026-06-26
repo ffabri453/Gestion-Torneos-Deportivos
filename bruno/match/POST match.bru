@@ -1,11 +1,13 @@
 meta {
-  name: Create Match
+  name: POST match
   type: http
   seq: 3
 }
 
 post {
   url: http://localhost:3000/matches
+  body: none
+  auth: none
 }
 
 headers {
@@ -23,5 +25,3 @@ body:json {
   "status": "scheduled"
   }
 }
-
-

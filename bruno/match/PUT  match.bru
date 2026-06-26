@@ -1,11 +1,13 @@
 meta {
-  name: Update Match
+  name: PUT  match
   type: http
   seq: 4
 }
 
 put {
   url: http://localhost:3000/matches/1
+  body: json
+  auth: none
 }
 
 headers {
@@ -14,11 +16,11 @@ headers {
 
 body:json {
   {
-    "tournament_id": 1,
-    "home_team_id": 1,
-    "away_team_id": 2,
+    "tournament_id": 6,
+    "home_team_id": 11,
+    "away_team_id": 12,
     "match_date": "2026-07-10 20:00:00",
-    "location": "Cancha 1",
+    "location": "Cancha 999",
     "round": "Round 1",
     "home_goals": 3,
     "away_goals": 1,
