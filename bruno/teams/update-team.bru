@@ -1,0 +1,22 @@
+meta {
+  name: Update Team
+  type: http
+}
+
+put {
+  url: http://localhost:3000/api/teams/1
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "tournament_id": 1,
+    "name": "Los Halcones FC",
+    "captain": "Juan Perez",
+    "city": "Buenos Aires",
+    "players_count": 14
+  }
+}
